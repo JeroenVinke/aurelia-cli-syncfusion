@@ -79,6 +79,9 @@
       "minify": "stage & prod",
       "sourcemaps": "dev & stage"
     },
+    "copyFiles": {
+      "node_modules/syncfusion-javascript/Content/ej/web/common-images/**/*": "common-images"
+    },
     "bundles": [
       {
         "name": "app-bundle.js",
@@ -118,6 +121,8 @@
           "aurelia-templating-binding",
           "text",
           "jquery",
+					"jquery-validation",
+					"jquery-validation-unobtrusive",
           {
             "name": "aurelia-templating-resources",
             "path": "../node_modules/aurelia-templating-resources/dist/amd",
@@ -139,15 +144,17 @@
             "path": "../node_modules/aurelia-syncfusion-bridge/dist/amd",
             "main": "index",
             "resources": [
-              "grid/grid.js",
-              "grid/column.js",
-              "common/template.js"
+              "**/*.js"
             ]
           },
           {
             "name": "syncfusion-javascript",
             "path": "../node_modules/syncfusion-javascript/",
-            "main": false
+            "main": false,
+            "resources": [
+              "Content/ej/web/ej.widgets.core.bootstrap.min.css",
+              "Content/ej/web/bootstrap-theme/ej.theme.min.css"
+            ]
           },
           {
             "name": "jsrender",

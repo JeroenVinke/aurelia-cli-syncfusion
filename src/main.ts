@@ -5,7 +5,7 @@ export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
     .feature('resources')
-    .plugin('aurelia-syncfusion-bridge', (syncfusion) => syncfusion.ejGrid().ejTemplate());
+	  .plugin("aurelia-syncfusion-bridge", (syncfusion) => syncfusion.useAll());
 
   if (environment.debug) {
     aurelia.use.developmentLogging();
